@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Gamelibry main page</title>
+</head>
+<body style="background-color: lightgreen">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="#">Biblioteka Gier</a>
+        </div>
+
+    </div>
+</nav>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron" style="background-color: lightblue">
+    <div class="container">
+        <h1>Witaj w biblitotece gier</h1>
+        <p>This is an educational project for exceptional students willing to learn Java and Spring to build different fantastic apps. Muslibry is community music manager which features are not yet known! Help us find some :)</p>
+
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+        <div class="col-md-3">
+            <h2>GRY</h2>
+            <p>Główna część aplikacji
+            <ul>
+                <li><a href="#" th:href="@{'/game/list'}" style="margin-right: 5px;">List</a>Wszystkie GRY</li>
+                <li><a href="#" th:href="@{'/game/new'}" style="margin-right: 5px;">Dodaj nową</a>GRĘ</li>
+            </ul>
+
+
+            <p><a class="btn btn-default" href="#" role="button" th:href="@{'/games/'}" >Wszystkie GRY &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Twórcy</h2>
+            <p>Wybierz twórców</p>
+            <ul>
+                <li><a href="#" th:href="@{'/creator/list'}" style="margin-right: 5px;">List</a>Wszyscy TWÓRCY</li>
+                <li><a href="#" th:href="@{'/creator/new'}" style="margin-right: 5px;">Dodaj nowego</a>TWÓRCĘ</li>
+            </ul>
+
+
+            <p><a class="btn btn-default" href="#" role="button" th:href="@{'/creators/'}" >Wszyscy TWÓRCY &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>WYDAWCY</h2>
+            <p>Wydawcy wszystkich gier</p>
+            <ul>
+                <li><a href="#" th:href="@{'/publisher/list'}" style="margin-right: 5px;">List</a>Wszyscy WYDAWCY</li>
+                <li><a href="#" th:href="@{'/publisher/new'}" style="margin-right: 5px;">Dodaj nowego</a>WYDAWCĘ</li>
+            </ul>
+
+            <p><a class="btn btn-default" href="#" role="button" th:href="@{'/publishers/'}" >Wszyscy WYDAWCY &raquo;</a></p>
+        </div>
+
+        <div class="col-md-3">
+            <h2>BOHATEROWIE</h2>
+            <p>Bohaterowie z gier</p>
+            <ul>
+                <li><a href="#" th:href="@{'/hero/list'}" style="margin-right: 5px;">List</a>Wszyscy Bohaterowie</li>
+                <li><a href="#" th:href="@{'/hero/new'}" style="margin-right: 5px;">Dodaj nowego</a>Bohatera</li>
+            </ul>
+
+            <p><a class="btn btn-default" href="#" role="button" th:href="@{'/heroes/'}" >Wszyscy Bohaterowie &raquo;</a></p>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+</body>
+</html>

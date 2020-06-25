@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Game Form</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-3">
+            <form  th:object="${game}" th:action="@{/game/}" method="post">
+                <input type="hidden" th:field="*{id}"/>
+                <div class="pannel-group">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h1 class="panel-title"><span th:text="*{id} != null ? 'Edit ' : 'New '"></span>Game Information</h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-8 form-group">
+                                    <label>Tytuł:</label>
+                                    <input type="text" class="form-control" th:field="*{title}"/>
+                                </div>
+                                <div class="col-md-4 form-group">
+                                    <label>Twórca:</label>
+                                    <select class="form-control" th:field="*{creatorId}">
+                                        <option th:each="creator : ${creators}" th:text="${creator.firstName} + ' ' + ${creator.lastName}" th:value="${creator.id}">The Great Artist</option>
+                                        <option th:remove="all">F44 Red Artist</option>
+                                        <option th:remove="all">Que Artes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label>Gatunek:</label>
+                                    <input type="text" class="form-control" th:field="*{genre}"/>
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label>Rok produkcji:</label>
+                                    <input type="text" class="form-control" th:field="*{year}"/>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6 form-group">
+                                    <label>Wydawca:</label>
+                                    <select class="form-control" th:field="*{publisherId}">
+                                        <option th:each="publisher : ${publishers}" th:text="${publisher.name}" th:value="${publisher.id}">The Great Publisher</option>
+                                        <option th:remove="all">F44 Red</option>
+                                        <option th:remove="all">Fakelisher</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6 form-group">
+                                    <label>Bohater:</label>
+                                    <select class="form-control" th:field="*{heroId}">
+
+                                        <option th:each="hero : ${heroes}" th:text="${hero.name}" th:value="${hero.id}">The Great Hero</option>
+                                        <option th:remove="all">F44 Red</option>
+                                        <option th:remove="all">Fakelisher</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Potwierdź</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
